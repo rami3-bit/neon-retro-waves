@@ -1,11 +1,13 @@
 import djAdolfoImage from "@/assets/dj-adolfo.jpg";
 import { Radio } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /**
  * HeroSection - Main hero area featuring DJ Adolfo's profile
- * Features glowing circular border effect and neon styling
  */
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       {/* Background grid pattern */}
@@ -27,7 +29,7 @@ const HeroSection = () => {
             <span className="relative inline-flex rounded-full h-4 w-4 bg-accent shadow-[0_0_20px_hsl(var(--accent))]" />
           </span>
           <span className="font-display text-lg font-bold tracking-widest text-accent neon-text-pink">
-            ON AIR
+            {t('onAir')}
           </span>
         </div>
         
@@ -51,13 +53,13 @@ const HeroSection = () => {
         
         {/* Tagline */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-6 font-light">
-          Your Gateway to the <span className="text-primary neon-text-cyan">80s</span> & <span className="text-accent neon-text-pink">90s</span>
+          {t('tagline')} <span className="text-primary neon-text-cyan">80s</span> {t('and')} <span className="text-accent neon-text-pink">90s</span>
         </p>
         
         {/* Radio wave icon with neon effect */}
         <div className="flex justify-center items-center gap-2 text-primary mb-8">
           <Radio className="w-6 h-6" />
-          <span className="font-display text-sm tracking-widest">RETRO RADIO VIBES</span>
+          <span className="font-display text-sm tracking-widest">{t('retroVibes')}</span>
           <Radio className="w-6 h-6" />
         </div>
         
@@ -65,14 +67,13 @@ const HeroSection = () => {
         <button 
           className="glass-card px-8 py-4 font-display text-lg tracking-wider neon-border-cyan hover:scale-105 transition-transform duration-300"
           onClick={() => {
-            // Scroll to schedule section
             const scheduleSection = document.getElementById('schedule');
             if (scheduleSection) {
               scheduleSection.scrollIntoView({ behavior: 'smooth' });
             }
           }}
         >
-          VIEW SCHEDULE
+          {t('viewSchedule')}
         </button>
       </div>
     </section>

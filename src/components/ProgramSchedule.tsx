@@ -1,28 +1,28 @@
 import { Clock, Calendar, Disc3 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /**
  * ProgramSchedule - Displays upcoming DJ sets in a grid
- * Edit the scheduleData array to update show times and details
  */
 
 interface ShowData {
   id: number;
   title: string;
   dj: string;
-  day: string;
+  dayKey: string;
   time: string;
   genre: string;
   isLive?: boolean;
 }
 
-// Schedule data - easily editable
+// Schedule data - uses translation keys for days
 const scheduleData: ShowData[] = [
   {
     id: 1,
     title: "Neon Nights",
     dj: "DJ Adolfo",
-    day: "Friday",
-    time: "8:00 PM - 12:00 AM",
+    dayKey: "friday",
+    time: "20:00 - 00:00",
     genre: "80s Synthpop & New Wave",
     isLive: true,
   },
@@ -30,45 +30,45 @@ const scheduleData: ShowData[] = [
     id: 2,
     title: "Retro Rewind",
     dj: "DJ Adolfo",
-    day: "Saturday",
-    time: "6:00 PM - 10:00 PM",
+    dayKey: "saturday",
+    time: "18:00 - 22:00",
     genre: "90s Dance & Eurodance",
   },
   {
     id: 3,
     title: "Sunday Grooves",
     dj: "DJ Adolfo",
-    day: "Sunday",
-    time: "4:00 PM - 8:00 PM",
+    dayKey: "sunday",
+    time: "16:00 - 20:00",
     genre: "80s Rock & Power Ballads",
   },
   {
     id: 4,
     title: "Throwback Thursday",
     dj: "DJ Adolfo",
-    day: "Thursday",
-    time: "9:00 PM - 1:00 AM",
+    dayKey: "thursday",
+    time: "21:00 - 01:00",
     genre: "90s Hip-Hop & R&B",
   },
   {
     id: 5,
     title: "Midnight Mix",
     dj: "DJ Adolfo",
-    day: "Wednesday",
-    time: "10:00 PM - 2:00 AM",
+    dayKey: "wednesday",
+    time: "22:00 - 02:00",
     genre: "80s & 90s Mix",
   },
   {
     id: 6,
     title: "Vinyl Sessions",
     dj: "DJ Adolfo",
-    day: "Monday",
-    time: "7:00 PM - 10:00 PM",
+    dayKey: "monday",
+    time: "19:00 - 22:00",
     genre: "Classic Vinyl Spins",
   },
 ];
 
-const ScheduleCard = ({ show }: { show: ShowData }) => {
+const ScheduleCard = ({ show, t }: { show: ShowData; t: (key: string) => string }) => {
   return (
     <div className={`glass-card p-6 relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 ${show.isLive ? 'neon-border-pink' : ''}`}>
       {/* Live badge */}
@@ -103,7 +103,7 @@ const ScheduleCard = ({ show }: { show: ShowData }) => {
       <div className="space-y-2 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <Calendar className="w-4 h-4 text-primary" />
-          <span>{show.day}</span>
+          <span>{t(show.dayKey)}</span>
         </div>
         <div className="flex items-center gap-2">
           <Clock className="w-4 h-4 text-primary" />
@@ -118,16 +118,17 @@ const ScheduleCard = ({ show }: { show: ShowData }) => {
 };
 
 const ProgramSchedule = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="schedule" className="relative py-20 px-4">
       {/* Section header */}
       <div className="text-center mb-12">
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-          <span className="gradient-text">UPCOMING SETS</span>
+          <span className="gradient-text">{t('scheduleTitle')}</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Tune in to DJ Adolfo's weekly shows featuring the best hits from the 80s and 90s. 
-          Don't miss a beat!
+          {t('scheduleSubtitle')}
         </p>
       </div>
       
@@ -135,7 +136,7 @@ const ProgramSchedule = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {scheduleData.map((show) => (
-            <ScheduleCard key={show.id} show={show} />
+            <ScheduleCard key={show.id} show={show} t={t} />
           ))}
         </div>
       </div>
