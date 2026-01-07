@@ -1,38 +1,39 @@
 import { Instagram, Facebook, Headphones, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /**
  * SocialFeed - Social media links section with prominent icons
- * Features Instagram embed placeholder and direct links to all platforms
  */
-
-const socialPlatforms = [
-  {
-    name: "Instagram",
-    handle: "@djloboradio",
-    icon: Instagram,
-    url: "https://www.instagram.com/djloboradio",
-    color: "from-pink-500 to-purple-500",
-    description: "Följ oss för senaste nytt och bilder",
-  },
-  {
-    name: "Facebook",
-    handle: "DJ Lobo Radio DJs",
-    icon: Facebook,
-    url: "https://www.facebook.com/djloboradiodjs/",
-    color: "from-blue-600 to-blue-400",
-    description: "Gilla vår sida för uppdateringar",
-  },
-  {
-    name: "Mixcloud",
-    handle: "DjLobo75",
-    icon: Headphones,
-    url: "https://www.mixcloud.com/DjLobo75/",
-    color: "from-cyan-500 to-teal-400",
-    description: "Lyssna på tidigare mixar och sets",
-  },
-];
-
 const SocialFeed = () => {
+  const { t } = useLanguage();
+
+  const socialPlatforms = [
+    {
+      name: "Instagram",
+      handle: "@djloboradio",
+      icon: Instagram,
+      url: "https://www.instagram.com/djloboradio",
+      color: "from-pink-500 to-purple-500",
+      description: t('instagramDesc'),
+    },
+    {
+      name: "Facebook",
+      handle: "DJ Lobo Radio DJs",
+      icon: Facebook,
+      url: "https://www.facebook.com/djloboradiodjs/",
+      color: "from-blue-600 to-blue-400",
+      description: t('facebookDesc'),
+    },
+    {
+      name: "Mixcloud",
+      handle: "DjLobo75",
+      icon: Headphones,
+      url: "https://www.mixcloud.com/DjLobo75/",
+      color: "from-cyan-500 to-teal-400",
+      description: t('mixcloudDesc'),
+    },
+  ];
+
   return (
     <section id="social" className="relative py-20 px-4">
       {/* Background elements */}
@@ -44,10 +45,10 @@ const SocialFeed = () => {
         {/* Section header */}
         <div className="text-center mb-12">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            <span className="gradient-text">FÖLJ OSS</span>
+            <span className="gradient-text">{t('socialTitle')}</span>
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Häng med på sociala medier för de senaste uppdateringarna och mixes
+            {t('socialSubtitle')}
           </p>
         </div>
 
@@ -79,7 +80,7 @@ const SocialFeed = () => {
                 
                 {/* Link indicator */}
                 <div className="flex items-center gap-2 text-muted-foreground group-hover:text-primary transition-colors">
-                  <span className="text-sm">Besök</span>
+                  <span className="text-sm">{t('visit')}</span>
                   <ExternalLink className="w-4 h-4" />
                 </div>
               </a>
@@ -91,10 +92,10 @@ const SocialFeed = () => {
         <div className="glass-card p-6 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Instagram className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-xl font-bold">Instagram Feed</h3>
+            <h3 className="font-display text-xl font-bold">{t('instagramFeed')}</h3>
           </div>
           <p className="text-muted-foreground mb-4">
-            Se våra senaste inlägg direkt från Instagram
+            {t('latestPosts')}
           </p>
           
           {/* Placeholder grid for Instagram posts */}
@@ -116,7 +117,7 @@ const SocialFeed = () => {
             className="inline-flex items-center gap-2 glass-card px-6 py-3 neon-border-pink hover:scale-105 transition-transform font-display tracking-wide"
           >
             <Instagram className="w-5 h-5" />
-            Följ @djloboradio
+            {t('followOn')} @djloboradio
           </a>
         </div>
       </div>

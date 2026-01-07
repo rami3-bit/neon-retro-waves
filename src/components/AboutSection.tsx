@@ -1,34 +1,30 @@
 import { Headphones, Music, Mic2, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /**
  * AboutSection - DJ Adolfo's bio and background
- * Edit the bio text below to customize the content
  */
-
-const features = [
-  {
-    icon: Music,
-    title: "80s Specialist",
-    description: "Synthpop, New Wave, and all the classics that defined a generation",
-  },
-  {
-    icon: Headphones,
-    title: "90s Expert",
-    description: "From Eurodance to Hip-Hop, relive the golden era of club music",
-  },
-  {
-    icon: Mic2,
-    title: "Live DJ Sets",
-    description: "Interactive shows with live mixing and audience requests",
-  },
-  {
-    icon: Heart,
-    title: "Passion for Music",
-    description: "20+ years of experience spinning the best retro hits",
-  },
-];
-
 const AboutSection = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Music,
+      title: t('feature1Title'),
+      description: t('feature1Desc'),
+    },
+    {
+      icon: Headphones,
+      title: t('feature2Title'),
+      description: t('feature2Desc'),
+    },
+    {
+      icon: Mic2,
+      title: t('feature3Title'),
+      description: t('feature3Desc'),
+    },
+  ];
+
   return (
     <section id="about" className="relative py-20 px-4">
       {/* Background accent */}
@@ -40,41 +36,23 @@ const AboutSection = () => {
           {/* Left: Bio content */}
           <div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="gradient-text">ABOUT</span>
-              <br />
-              <span className="text-foreground">DJ ADOLFO</span>
+              <span className="gradient-text">{t('aboutTitle')}</span>
             </h2>
             
             <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                DJ Adolfo has been keeping the spirit of the <span className="text-primary">80s</span> and{" "}
-                <span className="text-accent">90s</span> alive for over two decades. What started as a 
-                passion for collecting vinyl records has evolved into a mission to share the greatest 
-                hits of these legendary eras with audiences worldwide.
-              </p>
-              
-              <p>
-                From the neon-lit synth sounds of the 80s to the energetic beats of 90s dance music, 
-                DJ Adolfo curates the perfect soundtrack for every listener. Whether you're looking 
-                for nostalgic classics or discovering these timeless tracks for the first time, 
-                you're in for a musical journey like no other.
-              </p>
-              
-              <p>
-                <span className="text-secondary font-semibold">Join the retro revolution</span> — 
-                tune in to experience the best music from the decades that shaped modern pop culture.
-              </p>
+              <p>{t('aboutText1')}</p>
+              <p>{t('aboutText2')}</p>
             </div>
             
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-border/50">
               <div className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-primary">20+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-sm text-muted-foreground">Years</div>
               </div>
               <div className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-secondary">5K+</div>
-                <div className="text-sm text-muted-foreground">Vinyl Records</div>
+                <div className="text-sm text-muted-foreground">Vinyl</div>
               </div>
               <div className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-accent">100K+</div>

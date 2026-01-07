@@ -1,8 +1,8 @@
-import { Instagram, Facebook, Headphones, Radio, Mail } from "lucide-react";
+import { Instagram, Facebook, Headphones, Radio } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 /**
  * Footer - Social links and copyright
- * Update the social URLs below with actual links
  */
 
 // Social media links
@@ -25,6 +25,7 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   
   return (
@@ -39,14 +40,13 @@ const Footer = () => {
           <div className="flex items-center gap-2 mb-6">
             <Radio className="w-8 h-8 text-primary" />
             <span className="font-display text-2xl font-bold gradient-text">
-              DJ ADOLFO
+              DJ LOBO RADIO
             </span>
           </div>
           
           {/* Tagline */}
           <p className="text-muted-foreground mb-8 max-w-md">
-            Bringing the best of 80s and 90s music to your ears. 
-            Tune in and let the nostalgia flow.
+            {t('footerTagline')}
           </p>
           
           {/* Social links */}
@@ -73,14 +73,14 @@ const Footer = () => {
           
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © {currentYear} DJ Adolfo. All rights reserved.
+            © {currentYear} DJ Lobo Radio. All rights reserved.
           </p>
           
           {/* Additional links */}
           <div className="flex items-center gap-4 mt-4 text-xs text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">{t('privacyPolicy')}</a>
             <span>•</span>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-primary transition-colors">{t('termsOfService')}</a>
           </div>
         </div>
       </div>
