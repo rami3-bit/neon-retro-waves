@@ -20,13 +20,15 @@ const HeroSection = () => {
       <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-neon-purple/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        {/* Live indicator */}
-        <div className="inline-flex items-center gap-2 glass-card px-4 py-2 mb-8">
-          <span className="relative flex h-3 w-3">
+        {/* ON AIR indicator - prominent pulsing button */}
+        <div className="inline-flex items-center gap-3 glass-card px-6 py-3 mb-8 neon-border-pink animate-pulse-glow">
+          <span className="relative flex h-4 w-4">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-accent shadow-[0_0_20px_hsl(var(--accent))]" />
           </span>
-          <span className="text-sm font-medium text-accent">LIVE NOW</span>
+          <span className="font-display text-lg font-bold tracking-widest text-accent neon-text-pink">
+            ON AIR
+          </span>
         </div>
         
         {/* DJ Profile Image with glowing ring */}

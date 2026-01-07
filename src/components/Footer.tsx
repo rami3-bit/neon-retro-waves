@@ -5,27 +5,22 @@ import { Instagram, Facebook, Headphones, Radio, Mail } from "lucide-react";
  * Update the social URLs below with actual links
  */
 
-// Social media links - replace "#" with actual URLs
+// Social media links
 const socialLinks = [
   {
     name: "Instagram",
     icon: Instagram,
-    url: "#", // Replace with: https://instagram.com/djadolfo
+    url: "https://www.instagram.com/djloboradio",
   },
   {
     name: "Facebook",
     icon: Facebook,
-    url: "#", // Replace with: https://facebook.com/djadolfo
+    url: "https://www.facebook.com/djloboradiodjs/",
   },
   {
     name: "Mixcloud",
-    icon: Headphones, // Using Headphones as Mixcloud icon
-    url: "#", // Replace with: https://mixcloud.com/djadolfo
-  },
-  {
-    name: "Email",
-    icon: Mail,
-    url: "mailto:contact@djadolfo.com", // Replace with actual email
+    icon: Headphones,
+    url: "https://www.mixcloud.com/DjLobo75/",
   },
 ];
 
