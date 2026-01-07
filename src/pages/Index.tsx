@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import AudioPlayer from "@/components/AudioPlayer";
 import ProgramSchedule from "@/components/ProgramSchedule";
 import AboutSection from "@/components/AboutSection";
+import SocialFeed from "@/components/SocialFeed";
 import Footer from "@/components/Footer";
 
 /**
@@ -28,6 +29,7 @@ const Index = () => {
         <HeroSection />
         <ProgramSchedule />
         <AboutSection />
+        <SocialFeed />
         <Footer />
       </main>
       
