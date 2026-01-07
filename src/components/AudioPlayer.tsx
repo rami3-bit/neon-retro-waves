@@ -1,21 +1,19 @@
 import { useState, useRef, useEffect } from "react";
-import { Play, Pause, Volume2, VolumeX, Radio } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Radio, Loader2 } from "lucide-react";
 
 /**
  * AudioPlayer - Sticky bottom audio player for live stream
- * 
- * PLACEHOLDER STREAM URL:
- * Replace the streamUrl variable below with your actual stream URL
- * Common formats: .mp3, .aac, .ogg streams or Icecast/Shoutcast URLs
+ * Stream URL: Zeno.fm DJ Lobo Radio
  */
-const STREAM_URL = "https://stream.zeno.fm/0r0xa792kwzuv"; // <-- Replace with your stream URL
+const STREAM_URL = "https://stream.zeno.fm/gzzqvbuy0d7uv";
 
 const AudioPlayer = () => {
   // State for player controls
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [volume, setVolume] = useState(0.7);
   const [isMuted, setIsMuted] = useState(false);
-  const [nowPlaying, setNowPlaying] = useState("80s & 90s Greatest Hits");
+  const [nowPlaying, setNowPlaying] = useState("DJ Lobo Radio - 80s & 90s Hits");
   
   // Reference to the audio element
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -27,12 +25,19 @@ const AudioPlayer = () => {
     
     if (isPlaying) {
       audio.pause();
+      setIsPlaying(false);
     } else {
-      audio.play().catch((error) => {
-        console.log("Playback failed:", error);
-      });
+      setIsLoading(true);
+      audio.play()
+        .then(() => {
+          setIsPlaying(true);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.log("Playback failed:", error);
+          setIsLoading(false);
+        });
     }
-    setIsPlaying(!isPlaying);
   };
   
   // Handle volume change
@@ -58,11 +63,33 @@ const AudioPlayer = () => {
     setIsMuted(!isMuted);
   };
   
-  // Set initial volume on mount
+  // Set initial volume and handle audio events
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume;
-    }
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    audio.volume = volume;
+    
+    // Handle stream ending or errors
+    const handleEnded = () => setIsPlaying(false);
+    const handleError = () => {
+      setIsPlaying(false);
+      setIsLoading(false);
+    };
+    const handleWaiting = () => setIsLoading(true);
+    const handlePlaying = () => setIsLoading(false);
+    
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('error', handleError);
+    audio.addEventListener('waiting', handleWaiting);
+    audio.addEventListener('playing', handlePlaying);
+    
+    return () => {
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('error', handleError);
+      audio.removeEventListener('waiting', handleWaiting);
+      audio.removeEventListener('playing', handlePlaying);
+    };
   }, []);
   
   return (
@@ -84,13 +111,16 @@ const AudioPlayer = () => {
               {/* Play/Pause Button */}
               <button
                 onClick={togglePlay}
-                className="w-12 h-12 rounded-full bg-gradient-neon flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
+                disabled={isLoading}
+                className="w-14 h-14 rounded-full bg-gradient-neon flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg shadow-primary/30 disabled:opacity-70"
                 aria-label={isPlaying ? "Pause" : "Play"}
               >
-                {isPlaying ? (
-                  <Pause className="w-5 h-5 text-background" fill="currentColor" />
+                {isLoading ? (
+                  <Loader2 className="w-6 h-6 text-background animate-spin" />
+                ) : isPlaying ? (
+                  <Pause className="w-6 h-6 text-background" fill="currentColor" />
                 ) : (
-                  <Play className="w-5 h-5 text-background ml-1" fill="currentColor" />
+                  <Play className="w-6 h-6 text-background ml-1" fill="currentColor" />
                 )}
               </button>
               
