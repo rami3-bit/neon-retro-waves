@@ -1,5 +1,6 @@
 import { Instagram, Facebook, Headphones, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import instagramQR from "@/assets/instagram-qr.jpg";
 
 /**
  * SocialFeed - Social media links section with prominent icons
@@ -52,8 +53,8 @@ const SocialFeed = () => {
           </p>
         </div>
 
-        {/* Social platform cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* Social platform cards with QR code */}
+        <div className="grid md:grid-cols-4 gap-6 mb-12">
           {socialPlatforms.map((platform) => {
             const Icon = platform.icon;
             return (
@@ -86,6 +87,23 @@ const SocialFeed = () => {
               </a>
             );
           })}
+          
+          {/* Instagram QR Code card */}
+          <a
+            href="https://www.instagram.com/djloboradio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group glass-card p-6 hover:neon-border-pink transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center"
+          >
+            <img 
+              src={instagramQR} 
+              alt="Scan to follow on Instagram" 
+              className="w-32 h-32 rounded-lg mb-4 group-hover:scale-110 transition-transform"
+            />
+            <p className="text-muted-foreground text-sm text-center">
+              {t('scanToFollow')}
+            </p>
+          </a>
         </div>
 
         {/* Google Calendar embed */}

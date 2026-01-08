@@ -1,5 +1,5 @@
-import { Radio } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import djLoboLogo from '@/assets/dj-lobo-logo.jpg';
 
 /**
  * Header - Fixed navigation bar with logo and language selector
@@ -11,10 +11,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
-            <Radio className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-            <span className="font-display text-lg font-bold gradient-text">
-              DJ LOBO RADIO
-            </span>
+            <img 
+              src={djLoboLogo} 
+              alt="DJ Lobo Radio" 
+              className="h-10 w-auto group-hover:scale-105 transition-transform"
+            />
           </a>
 
           {/* Right side - Language selector */}
