@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
  * SocialFeed - Social media links section with prominent icons
  */
 const SocialFeed = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const socialPlatforms = [
     {
@@ -100,7 +100,7 @@ const SocialFeed = () => {
           {/* Responsive calendar container */}
           <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingBottom: '75%' }}>
             <iframe
-              src="https://calendar.google.com/calendar/embed?src=djloboradio2016%40gmail.com&ctz=Europe%2FStockholm&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&mode=AGENDA"
+              src={`https://calendar.google.com/calendar/embed?src=djloboradio2016%40gmail.com&ctz=Europe%2FStockholm&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&mode=AGENDA&hl=${language}`}
               className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
               title="DJ Lobo Radio Schedule"
             />
