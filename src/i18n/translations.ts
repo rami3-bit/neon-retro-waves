@@ -23,9 +23,9 @@ export const translations = {
     scheduleSubtitle: "Missa inte dessa fantastiska shower fyllda med de bästa 80- och 90-talshitsen",
     
     // About
-    aboutTitle: "OM DJ ADOLFO",
-    aboutText1: "Med över 20 års erfarenhet av att spinna de bästa låtarna från 80- och 90-talet har DJ Adolfo blivit en legend inom retromusikscenen.",
-    aboutText2: "Hans passion för denna gyllene era av musik smittar av sig på varje lyssnare, och tar dem på en nostalgisk resa genom tidernas mest minnesvärda låtar.",
+    aboutTitle: "OM DJ LOBO",
+    aboutText1: "DJ Lobo är en passionerad DJ med rötter i 80- och 90-talets gyllene musikera. Med sin unika blandning av klassiska hits och nostalgi skapar han en oförglömlig atmosfär.",
+    aboutText2: "Oavsett om det är synth-pop, eurodance eller rock - DJ Lobo tar dig på en resa genom de bästa låtarna från förr, direkt till ditt vardagsrum.",
     feature1Title: "80-talshits",
     feature1Desc: "Synth-pop, rock och discoklassiker",
     feature2Title: "90-talsfavoriter",
@@ -77,9 +77,9 @@ export const translations = {
     scheduleSubtitle: "No te pierdas estos increíbles shows llenos de los mejores éxitos de los 80 y 90",
     
     // About
-    aboutTitle: "SOBRE DJ ADOLFO",
-    aboutText1: "Con más de 20 años de experiencia pinchando los mejores éxitos de los 80 y 90, DJ Adolfo se ha convertido en una leyenda de la escena de música retro.",
-    aboutText2: "Su pasión por esta era dorada de la música es contagiosa, llevando a cada oyente en un viaje nostálgico a través de las canciones más memorables de todos los tiempos.",
+    aboutTitle: "SOBRE DJ LOBO",
+    aboutText1: "DJ Lobo es un DJ apasionado con raíces en la era dorada de la música de los 80 y 90. Con su mezcla única de éxitos clásicos y nostalgia, crea una atmósfera inolvidable.",
+    aboutText2: "Ya sea synth-pop, eurodance o rock - DJ Lobo te lleva en un viaje a través de las mejores canciones del pasado, directamente a tu sala de estar.",
     feature1Title: "Éxitos de los 80",
     feature1Desc: "Synth-pop, rock y clásicos disco",
     feature2Title: "Favoritos de los 90",
@@ -131,9 +131,9 @@ export const translations = {
     scheduleSubtitle: "Don't miss these amazing shows filled with the best 80s and 90s hits",
     
     // About
-    aboutTitle: "ABOUT DJ ADOLFO",
-    aboutText1: "With over 20 years of experience spinning the best tracks from the 80s and 90s, DJ Adolfo has become a legend in the retro music scene.",
-    aboutText2: "His passion for this golden era of music is contagious, taking every listener on a nostalgic journey through the most memorable songs of all time.",
+    aboutTitle: "ABOUT DJ LOBO",
+    aboutText1: "DJ Lobo is a passionate DJ with roots in the golden era of 80s and 90s music. With his unique blend of classic hits and nostalgia, he creates an unforgettable atmosphere.",
+    aboutText2: "Whether it's synth-pop, eurodance or rock - DJ Lobo takes you on a journey through the best songs from the past, straight to your living room.",
     feature1Title: "80s Hits",
     feature1Desc: "Synth-pop, rock and disco classics",
     feature2Title: "90s Favorites",
