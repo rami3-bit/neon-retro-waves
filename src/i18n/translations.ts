@@ -43,6 +43,7 @@ export const translations = {
     followOn: "Följ",
     calendarTitle: "EVENTKALENDER",
     calendarSubtitle: "Se kommande sändningar och event",
+    scanToFollow: "Skanna för att följa på Instagram",
     
     // Footer
     footerTagline: "Bringing the best of 80s and 90s music to your ears. Tune in and let the nostalgia flow.",
@@ -96,6 +97,7 @@ export const translations = {
     followOn: "Seguir",
     calendarTitle: "CALENDARIO DE EVENTOS",
     calendarSubtitle: "Ver próximas transmisiones y eventos",
+    scanToFollow: "Escanea para seguir en Instagram",
     
     // Footer
     footerTagline: "Llevando lo mejor de la música de los 80 y 90 a tus oídos. Sintoniza y deja fluir la nostalgia.",
@@ -149,6 +151,7 @@ export const translations = {
     followOn: "Follow",
     calendarTitle: "EVENT CALENDAR",
     calendarSubtitle: "See upcoming broadcasts and events",
+    scanToFollow: "Scan to follow on Instagram",
     
     // Footer
     footerTagline: "Bringing the best of 80s and 90s music to your ears. Tune in and let the nostalgia flow.",

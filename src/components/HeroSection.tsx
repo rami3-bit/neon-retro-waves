@@ -1,4 +1,4 @@
-import djAdolfoImage from "@/assets/dj-adolfo.jpg";
+import djLoboImage from "@/assets/dj-lobo-performing.jpg";
 import { Radio } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -38,8 +38,8 @@ const HeroSection = () => {
           <div className="glow-ring w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
             <div className="w-full h-full rounded-full overflow-hidden bg-background">
               <img
-                src={djAdolfoImage}
-                alt="DJ Adolfo"
+                src={djLoboImage}
+                alt="DJ Lobo"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -48,7 +48,7 @@ const HeroSection = () => {
         
         {/* Title with neon glow */}
         <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-wider">
-          <span className="gradient-text">DJ ADOLFO</span>
+          <span className="gradient-text">DJ LOBO</span>
         </h1>
         
         {/* Tagline */}
