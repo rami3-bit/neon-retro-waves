@@ -41,8 +41,8 @@ export const translations = {
     mixcloudDesc: "Lyssna på tidigare mixar och sets",
     visit: "Besök",
     followOn: "Följ",
-    instagramFeed: "Instagram Feed",
-    latestPosts: "Se våra senaste inlägg direkt från Instagram",
+    calendarTitle: "EVENTKALENDER",
+    calendarSubtitle: "Se kommande sändningar och event",
     
     // Footer
     footerTagline: "Bringing the best of 80s and 90s music to your ears. Tune in and let the nostalgia flow.",
@@ -94,8 +94,8 @@ export const translations = {
     mixcloudDesc: "Escucha mezclas y sets anteriores",
     visit: "Visitar",
     followOn: "Seguir",
-    instagramFeed: "Feed de Instagram",
-    latestPosts: "Ver nuestras últimas publicaciones de Instagram",
+    calendarTitle: "CALENDARIO DE EVENTOS",
+    calendarSubtitle: "Ver próximas transmisiones y eventos",
     
     // Footer
     footerTagline: "Llevando lo mejor de la música de los 80 y 90 a tus oídos. Sintoniza y deja fluir la nostalgia.",
@@ -147,8 +147,8 @@ export const translations = {
     mixcloudDesc: "Listen to previous mixes and sets",
     visit: "Visit",
     followOn: "Follow",
-    instagramFeed: "Instagram Feed",
-    latestPosts: "See our latest posts from Instagram",
+    calendarTitle: "EVENT CALENDAR",
+    calendarSubtitle: "See upcoming broadcasts and events",
     
     // Footer
     footerTagline: "Bringing the best of 80s and 90s music to your ears. Tune in and let the nostalgia flow.",

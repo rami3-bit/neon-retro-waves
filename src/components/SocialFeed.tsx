@@ -88,37 +88,23 @@ const SocialFeed = () => {
           })}
         </div>
 
-        {/* Instagram embed placeholder */}
-        <div className="glass-card p-6 text-center">
+        {/* Google Calendar embed */}
+        <div className="glass-card p-6">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Instagram className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-xl font-bold">{t('instagramFeed')}</h3>
+            <h3 className="font-display text-xl font-bold gradient-text">{t('calendarTitle')}</h3>
           </div>
-          <p className="text-muted-foreground mb-4">
-            {t('latestPosts')}
+          <p className="text-muted-foreground text-center mb-6">
+            {t('calendarSubtitle')}
           </p>
           
-          {/* Placeholder grid for Instagram posts */}
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-4">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="aspect-square bg-gradient-to-br from-card to-muted rounded-lg flex items-center justify-center group hover:scale-105 transition-transform cursor-pointer"
-              >
-                <Instagram className="w-6 h-6 text-muted-foreground/30 group-hover:text-primary/50 transition-colors" />
-              </div>
-            ))}
+          {/* Responsive calendar container */}
+          <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingBottom: '75%' }}>
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=djloboradio2016%40gmail.com&ctz=Europe%2FStockholm&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&mode=AGENDA"
+              className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
+              title="DJ Lobo Radio Schedule"
+            />
           </div>
-          
-          <a
-            href="https://www.instagram.com/djloboradio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 glass-card px-6 py-3 neon-border-pink hover:scale-105 transition-transform font-display tracking-wide"
-          >
-            <Instagram className="w-5 h-5" />
-            {t('followOn')} @djloboradio
-          </a>
         </div>
       </div>
     </section>
