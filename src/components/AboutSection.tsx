@@ -1,8 +1,9 @@
-import { Headphones, Music, Mic2, Heart } from "lucide-react";
+import { Headphones, Music, Mic2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import djLoboProfile from "@/assets/dj-lobo-profile.jpg";
 
 /**
- * AboutSection - DJ Adolfo's bio and background
+ * AboutSection - DJ Lobo's bio and background
  */
 const AboutSection = () => {
   const { t } = useLanguage();
@@ -61,27 +62,42 @@ const AboutSection = () => {
             </div>
           </div>
           
-          {/* Right: Feature cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="glass-card p-6 hover:scale-105 transition-transform duration-300"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-neon flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-background" />
+          {/* Right: DJ Lobo image and feature cards */}
+          <div className="space-y-6">
+            {/* DJ Lobo Image */}
+            <div className="relative">
+              <div className="aspect-square max-w-md mx-auto overflow-hidden rounded-2xl border-2 border-primary/30 shadow-2xl shadow-primary/20">
+                <img 
+                  src={djLoboProfile} 
+                  alt="DJ Lobo" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-neon rounded-full opacity-50 blur-2xl" />
+            </div>
+            
+            {/* Feature cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <div
+                    key={index}
+                    className="glass-card p-4 hover:scale-105 transition-transform duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-gradient-neon flex items-center justify-center mb-3">
+                      <Icon className="w-5 h-5 text-background" />
+                    </div>
+                    <h3 className="font-display text-sm font-bold mb-1 text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="font-display text-lg font-bold mb-2 text-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
